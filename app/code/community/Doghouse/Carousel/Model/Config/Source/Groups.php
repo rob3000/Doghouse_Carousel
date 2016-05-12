@@ -22,4 +22,14 @@ class Doghouse_Carousel_Model_Config_Source_Groups extends Mage_Eav_Model_Entity
         array_unshift($collection, array('value'=> '', 'label'=> Mage::helper('adminhtml')->__('-- Please Select --')));
         return $collection;
     }
+
+    /**
+     * Get options in "key-value" format
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return Mage::getModel('dhcarousel/group')->getCollection()->toOptionArray();
+    }
 }

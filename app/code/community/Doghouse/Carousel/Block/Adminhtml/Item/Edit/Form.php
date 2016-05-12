@@ -45,12 +45,12 @@ class Doghouse_Carousel_Block_Adminhtml_Item_Edit_Form extends Mage_Adminhtml_Bl
         );
 
         $fieldset->addField(
-            "group_id", "select", array(
+            "group_id", "multiselect", array(
                 "label"    => Mage::helper("dhcarousel")->__("Group"),
                 "class"    => "required-entry",
                 "required" => true,
                 "name"     => "group_id",
-                "values"   => Mage::getResourceSingleton('dhcarousel/group_collection')->getValuesForForm(),
+                "values"   => Mage::getSingleton('dhcarousel/config_source_groups')->toArray(),
             )
         );
 
